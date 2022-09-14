@@ -3,27 +3,28 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { initRaygun, onBeforeSend } from './errorMonitoring';
+import { initRaygun, onBeforeSend, setUser, generateUser } from './errorMonitoring';
+import { generateRandomUser } from './dataGeneration';
 
-// initialising Raygun
-// eslint-disable-next-line no-undef
-// initRaygun({
-//   apiKey: 'gNO6NrncN4Wx8omuxOmyLw'
-// });
-//
-// onBeforeSend();
+initRaygun({
+  apiKey: '5NhsJzTwlsaJ00Q5wLzwA'
+});
 
-// initRaygun({
-//   apiKey: 'gNO6NrncN4Wx8omuxOmyLw',
-//   rg4js: rg4js
-// });
+// Log payload before send
+onBeforeSend();
+
+function initUser(){
+  var user = generateRandomUser();
+
+  setUser(user.email, user.firstName, user.fullName);
+}
+
+initUser();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <App />
 );
-
-rg4js('apiKey', 'gNO6NrncN4Wx8omuxOmyLw');
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

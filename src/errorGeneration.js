@@ -1,5 +1,6 @@
+import { capitalize } from '@mui/material';
 
-export function throwAnError() {throw`⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+export function throwAnError() {throw `⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⠋⠉⠉⠉⠙⠛⠻⢶⣤⡀⠀⠀⠀⠀⠀⠀
   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡾⠁⠀⠀⠀⠀⠀⠀⠀⠀⠈⢻⡆⠀⠀⠀⠀⠀
   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣠⣴⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡟⠁⠀⠀⠀⠀⠀
@@ -27,5 +28,10 @@ export function throwAnError() {throw`⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 }
 
   export function throwAnotherError() {
-    throw 'error!';
+    throw 'hello there!';
   }
+
+
+export function capitalisationError(input) {
+  var capitalisedVariable = input.capitalize();
+}
