@@ -6,21 +6,6 @@ import reportWebVitals from './reportWebVitals';
 import { initRaygun, onBeforeSend, setUser, generateUser } from './errorMonitoring';
 import { generateRandomUser } from './dataGeneration';
 
-initRaygun({
-  apiKey: '5NhsJzTwlsaJ00Q5wLzwA'
-});
-
-// Log payload before send
-onBeforeSend();
-
-function initUser(){
-  var user = generateRandomUser();
-
-  setUser(user.email, user.firstName, user.fullName);
-}
-
-initUser();
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <App />

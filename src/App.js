@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect} from 'react';
 import ReactDOM from 'react-dom/client';
 import Stack from "@mui/material/Stack";
 import { capitalize } from "@mui/material";
@@ -6,6 +6,7 @@ import Button from '@mui/material/Button';
 import './App.css';
 import {throwAnError, throwAnotherError, capitalisationError} from './errorGeneration.js';
 import {generateRandomUserDataSet} from './dataGeneration.js';
+import Raygun from './errorMonitoring';
 
 const BasicButtons = () => {
   return (
@@ -15,13 +16,13 @@ const BasicButtons = () => {
       <Button variant="outlined">Outlined</Button>
     </Stack>
   );
-}
+};
 
 const fallBackUiContent = () => {
   return (
     <p>Something's gone wrong!</p>
   );
-}
+};
 
 class RaygunErrorBoundary extends React.Component {
   constructor(props) {
@@ -50,9 +51,13 @@ class RaygunErrorBoundary extends React.Component {
   }
 }
 
+
+
 function App() {
+
   return (
     <div className="App">
+    <Raygun />
       <div className="main-content">
         <div className="content-box" onClick={throwAnError}>
           <h3>Generate an error</h3>
