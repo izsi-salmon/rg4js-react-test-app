@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import {generateRandomUser} from './dataGeneration.js';
+import {apiKey} from './apiKey.js';
 
 function initRaygun({ apiKey }) {
 
@@ -61,7 +62,7 @@ export default function Raygun(props) {
     document.body.appendChild(script);
 
     initRaygun({
-      apiKey: '5NhsJzTwlsaJ00Q5wLzwA'
+      apiKey: apiKey
     });
 
     // Log payload before send
